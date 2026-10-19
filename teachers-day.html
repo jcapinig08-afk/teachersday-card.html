@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day, Sir Randy Bello!</title>
+
+<style>
+/* ===== COLOR THEMES ===== */
+:root {
+    --bg: #fff0f5;
+    --text: #741333;
+    --card: rgba(255, 255, 255, 0.94);
+    --pink: #ff4f87;
+    --red: #e60045;
+    --shadow: rgba(230, 0, 69, 0.22);
+}
+
+body.dark {
+    --bg: #190812;
+    --text: #ffe1ec;
+    --card: rgba(48, 15, 34, 0.96);
+    --pink: #ff79a8;
+    --red: #ff315f;
+    --shadow: rgba(255, 49, 95, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background 0.6s, color 0.6s;
+}
+
+/* ===== GLOWING BACKGROUND ===== */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 15% 20%, #ffb3ce77, transparent 35%),
+        radial-gradient(circle at 85% 75%, #ff174477, transparent 35%);
+}
+
+/* ===== SPARKLING STARS ===== */
+#sparkles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.sparkle {
+    position: absolute;
+    color: #ff78a7;
+    text-shadow: 0 0 10px #ff4f87, 0 0 20px white;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5) rotate(90deg);
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    gap: 12px;
+}
+
+.logo {
+    color: var(--pink);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.theme-button {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--pink);
+    border-radius: 30px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px var(--shadow);
+}
+
+/* ===== WELCOME SECTION ===== */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.badge {
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ff91b5;
+    border-radius: 30px;
+    background: var(--card);
+    color: var(--pink);
+    animation: fadeDown 1s ease both;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    animation: fadeUp 1s ease both;
+}
+
+/* ===== SHIMMERING TEXT ===== */
+.shine {
+    background: linear-gradient(
+        90deg,
+        #d60045,
+        #ff9fc5,
+        #ffffff,
+        #ff4f87,
+        #d60045
+    );
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 300% center;
+    }
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    animation: fadeUp 1.4s ease both;
+}
+
+.scroll-hint {
+    margin-top: 30px;
+    color: var(--pink);
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== LETTER SECTION ===== */
+.letter-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 18px;
+}
+
+.letter-wrapper {
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    color: var(--pink);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* ===== ENVELOPE ===== */
+.envelope-container {
+    width: min(100%, 460px);
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.envelope {
+    height: 290px;
+    position: relative;
+    cursor: pointer;
+    filter: drop-shadow(0 15px 25px var(--shadow));
+    transition: transform 0.4s;
+}
+
+.envelope:hover {
+    transform: translateY(-5px);
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #c90040, #ff729c);
+    border-radius: 12px;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #ffb2cb, #ff4f87);
+    clip-path: polygon(0 0, 100% 0, 50% 60%);
+    transform-origin: top;
+    transition: transform 1s ease, opacity 0.7s;
+Compose
+Write to Cyrine Ibanes
